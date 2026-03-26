@@ -1,0 +1,41 @@
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	color: var(--primaryColor);
+	font-size: 16px;
+	cursor: pointer;
+}
+.checkbox:focus-visible {
+	outline: none;	
+}
+
+.checkboxInput {
+	display: none;
+}
+
+.customBox {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 2px solid var(--primaryColor);
+	border-radius: 5px;
+	transition: 0.1s;
+}
+.checkbox:focus-visible .customBox {
+	box-shadow: var(--box-shadow-focus);
+}
+
+.checkboxInput + .customBox path {
+	transition: 0.2s;
+
+	stroke: var(--primaryColor);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+}
+
+.checkboxInput:checked + .customBox path {
+	stroke-dashoffset: 30;
+}

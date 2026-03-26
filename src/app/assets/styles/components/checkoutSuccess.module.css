@@ -1,0 +1,225 @@
+/* ===== PAGE ===== */
+.page {
+    min-height: calc(100vh - var(--header-height));
+    background: linear-gradient(150deg, var(--fifthColor) 55%, rgba(136, 102, 93, 0.08) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem 6rem;
+    gap: 2.4rem;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+}
+
+.checkIcon {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.6rem;
+}
+
+.heroTitle {
+    font-size: var(--sizeH3);
+    font-family: Highfield;
+    color: var(--primaryColor);
+    font-weight: 100;
+    margin: 0;
+}
+
+.heroSubtitle {
+    font-size: 1.6rem;
+    font-family: FS-sienna;
+    color: var(--thirdColor);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.orderId {
+    font-size: 1.3rem;
+    color: #aaa;
+    background: rgba(39, 7, 34, 0.05);
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem;
+    font-family: monospace;
+}
+
+/* ===== CARD ===== */
+.card {
+    width: 100%;
+    max-width: 62rem;
+    background: white;
+    border-radius: 2rem;
+    padding: 3.2rem;
+    box-shadow: 0 4px 24px rgba(39, 7, 34, 0.08);
+}
+
+.cardTitle {
+    font-size: 1.8rem;
+    font-family: Highfield;
+    color: var(--primaryColor);
+    font-weight: 100;
+    margin: 0 0 2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1.5px solid rgba(39, 7, 34, 0.07);
+}
+
+/* ===== ITEMS TABLE ===== */
+.tableHeader {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--fifthColor);
+    border-radius: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.tableHeaderCell {
+    font-size: 1.2rem;
+    font-family: FS-sienna;
+    color: var(--thirdColor);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+}
+
+.tableHeaderCell:nth-child(2),
+.tableHeaderCell:nth-child(3) {
+    text-align: right;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid rgba(39, 7, 34, 0.06);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.itemName {
+    font-size: 1.6rem;
+    font-family: FS-sienna;
+    color: var(--primaryColor);
+}
+
+.itemQty {
+    font-size: 1.5rem;
+    font-family: FS-sienna;
+    color: var(--thirdColor);
+    text-align: right;
+    min-width: 4rem;
+}
+
+.itemPrice {
+    font-size: 1.6rem;
+    font-family: FS-sienna;
+    color: var(--primaryColor);
+    text-align: right;
+    min-width: 8rem;
+}
+
+/* ===== TOTALS ===== */
+.totals {
+    margin-top: 1.6rem;
+    padding-top: 1.6rem;
+    border-top: 1.5px solid rgba(39, 7, 34, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: FS-sienna;
+    color: var(--thirdColor);
+}
+
+.totalRowMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 1.6rem;
+    background: var(--primaryColor);
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+}
+
+.totalLabel {
+    font-size: 1.6rem;
+    font-family: FS-sienna;
+    color: var(--fifthColor);
+    font-weight: bold;
+}
+
+.totalAmount {
+    font-size: 2.2rem;
+    font-family: Highfield;
+    color: var(--fourthColor);
+    font-weight: 100;
+}
+
+/* ===== INFO BOX ===== */
+.infoBox {
+    width: 100%;
+    max-width: 62rem;
+    background: rgba(31, 58, 48, 0.06);
+    border-radius: 1.2rem;
+    padding: 1.6rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.infoIcon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.infoText {
+    font-size: 1.4rem;
+    font-family: FS-sienna;
+    color: var(--secondaryColor);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== ACTIONS ===== */
+.actions {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 3rem 1.5rem 4rem;
+    }
+    .card {
+        padding: 2rem;
+    }
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 32rem;
+    }
+}

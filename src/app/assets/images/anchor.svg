@@ -1,0 +1,12 @@
+<svg width="129" height="69" viewBox="0 0 129 69"  xmlns="http://www.w3.org/2000/svg">
+  <g id="ancre1" clip-path="url(#clip0)">
+    <path className="vector" fill="current"
+      d="M128.96 0C109.24 22.55 87.39 44.92 66.24 66.25L64.47 68.04L62.7 66.25C41.55 44.91 19.73 22.58 0 0C22.56 19.72 44.93 41.56 66.25 62.72H62.72C84.05 41.55 106.4 19.74 128.96 0Z"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0">
+      <rect width="128.96" height="68.04" />
+    </clipPath>
+  </defs>
+</svg>

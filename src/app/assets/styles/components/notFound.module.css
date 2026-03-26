@@ -1,0 +1,59 @@
+#notFoundWrapper {
+  min-height: calc(100vh - var(--header-height));
+  background: var(--fifthColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 3rem;
+}
+
+#notFoundTitle {
+  color: var(--primaryColor);
+  line-height: 1.2;
+}
+
+#notFoundContentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+#notFoundImg {
+  width: 28rem;
+  height: auto;
+}
+
+#notFoundSubWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+#notFoundButton {
+  font-size: var(--sizeH3);
+}
+
+#notFoundLink {
+  text-decoration: none;
+  color: var(--secondaryColor);
+  transition: opacity 0.2s;
+}
+
+#notFoundLink:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  #notFoundImg {
+    width: 18rem;
+  }
+  #notFoundContentWrapper {
+    gap: 2.4rem;
+  }
+}

@@ -1,0 +1,17 @@
+svg .shape {
+	opacity: 0;
+	transition: 0.5s;
+}
+svg:hover .shape,
+a:focus-visible .shape {
+	opacity: 1;
+}
+
+svg .details {
+	fill: var(--fifthColor);
+	transition: 0.5s;
+}
+svg:hover .details,
+a:focus-visible .details {
+	fill: var(--primaryColor);
+}

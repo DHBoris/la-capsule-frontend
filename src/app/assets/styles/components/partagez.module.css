@@ -1,0 +1,37 @@
+.partagez {
+	display: flex;
+    gap: 90px;
+	margin: var(--marginSection);
+	justify-content: space-evenly;
+}
+
+.partagezContent {
+	width: 50vw;
+	position: relative;
+    align-items: center;
+}
+
+.partagez h1, .partagez h2 {
+    margin: 0.5em 0;
+}
+.partagez h1 {
+    margin-top: 0;
+}
+
+.partagez button {
+	position: absolute;
+	bottom: var(--marginElement);
+	right: var(--marginSection);
+}
+
+.partagezBackground {
+	display: block;
+	position: absolute;
+	right: 2rem;
+	bottom: 11rem;
+}
+
+.buttonWrapper {
+    display: flex;
+    align-content: center;
+}

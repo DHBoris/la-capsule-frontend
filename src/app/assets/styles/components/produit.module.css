@@ -1,0 +1,33 @@
+#produit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    margin: var(--marginSection) 0;
+}
+
+.produitCards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.produitImg {
+    width: 25%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.produitImg:hover {
+    width: 32%;
+}
+
+.produitImg:focus-visible {
+    width: 32%;
+    box-shadow: var(--box-shadow-focus);
+}
+

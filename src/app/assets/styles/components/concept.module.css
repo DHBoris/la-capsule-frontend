@@ -1,0 +1,88 @@
+.concept {
+    background-image: url("../../images/bkg_concept.png");
+    background-color: var(--fifthColor);
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: right bottom;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    z-index: -1;
+}
+.concept > h3 {
+    margin: var(--marginElement) 0;
+}
+
+
+.wrapperConcept {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin: var(--marginElement) 0 ;
+}
+
+.contentConcept {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    height: 80px;
+    width: 18%;
+}
+.contentConcept > p {
+    padding: 10px 40px;
+    text-align: center;
+}
+
+.logoConcept {
+    height: 100%;
+}
+
+@media (max-width: 1120px) {
+    .wrapperConcept {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: start;
+    }
+    
+    .contentConcept {
+        width: auto;
+        height: auto;
+        flex-direction: column;
+    }
+    .contentConcept img {
+        height: 80px;
+    }
+
+    .concept::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        background-color: rgba(255, 252, 247, 0.8);
+    }
+    .concept h3,
+    .wrapperConcept  {
+        z-index: 1;
+    }
+}
+@media (max-width: 768px) {
+    .concept {
+        height: auto;
+        padding: 0 1em;
+        
+        background-image: none;
+    }
+
+    .wrapperConcept {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

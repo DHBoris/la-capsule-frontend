@@ -1,0 +1,83 @@
+/* RESET CSS */
+input[type='checkbox'] {
+  width: auto;
+  margin: 0;
+}
+
+:root {
+  --compositions-width: 1000px;
+}
+
+.yourCompositions {
+  flex-direction: column;
+  margin: var(--marginSection) auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.compositionH2 {
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  align-self: center;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+#searchTitle {
+  display: flex;
+  margin: 5rem 0 4.4rem 0;
+}
+
+.searchText {
+}
+
+#fileInputWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 49.09%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
+  padding: 9rem 40rem;
+  background-color: var(--fifthColor);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 3rem;
+}
+
+.uploadIcon {
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: contain;
+}
+
+.fileInputHiddenOverlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

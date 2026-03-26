@@ -1,0 +1,186 @@
+/* ===== LAYOUT ===== */
+.identificationWrapper {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - var(--header-height));
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== IMAGE SIDE ===== */
+.imgWrapper {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.imgContainer {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../images/photoCafe9.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primaryColor);
+  opacity: 0.5;
+}
+
+.imgText {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: var(--sizeH2);
+  color: var(--fifthColor);
+  font-family: Highfield;
+  font-weight: 100;
+  line-height: 1.2;
+  padding: 0 2rem;
+}
+
+/* ===== FORM SIDE ===== */
+.formWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(198, 158, 137, 0.10);
+  overflow: hidden;
+}
+
+.formOverlay {
+  display: none;
+}
+
+.formContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  max-width: 44rem;
+}
+
+.textIdentifie {
+  font-size: var(--sizeH3);
+  color: var(--primaryColor);
+  font-family: Highfield;
+  font-weight: 100;
+  margin-bottom: 2.8rem;
+}
+
+.identifieform {
+  width: 100%;
+}
+
+.inputContainer {
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+input.signInInput {
+  font-family: FS-sienna;
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding: 1.4rem 1.8rem;
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba(39, 7, 34, 0.15);
+  width: 100%;
+  background: var(--fifthColor);
+  color: var(--primaryColor);
+  box-shadow: var(--box-shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input.signInInput:focus {
+  border-color: var(--thirdColor);
+  box-shadow: var(--box-shadow), 0 0 0 3px rgba(136, 102, 93, 0.15);
+}
+
+.signInInput::placeholder {
+  color: var(--thirdColor);
+  opacity: 0.75;
+}
+
+input[type='checkbox']#signIncheckbox {
+  width: 1.8rem;
+  height: 1.8rem;
+  accent-color: var(--secondaryColor);
+  cursor: pointer;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+}
+
+.resteContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.restTextContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.textReste {
+  color: var(--primaryColor);
+  font-size: 1.4rem;
+}
+
+.textOublie {
+  color: var(--secondaryColor);
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+.submitButtonContainer {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.creerButton {
+  width: 100%;
+}
+
+.errorTag {
+  color: #c0392b;
+  font-size: 1.2rem;
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .identificationWrapper {
+    flex-direction: column;
+  }
+  .imgWrapper {
+    flex: 0 0 22vh;
+  }
+  .imgText {
+    font-size: var(--sizeH4);
+    bottom: 1.5rem;
+  }
+  .formWrapper {
+    flex: 1;
+    padding: 2rem;
+  }
+  .formContainer {
+    width: 90%;
+    max-width: none;
+  }
+}

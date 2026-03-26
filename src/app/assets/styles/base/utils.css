@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+:root {
+    --large-screen: 1250px;
+    --medium-screen: 800px;
+    --small-screen: 576px;
+
+    --primaryColor: #270722;
+    --secondaryColor: #1f3a30;
+    --thirdColor: #88665d;
+    --fourthColor: #c69e89;
+    --fifthColor: #fffcf6;
+    --selectionColor: rgba(143, 0, 121, 0.7);
+
+    --font1: 'HearthStone';
+    --font2: 'Cookie', cursive;
+    --font3: 'Futura';
+
+    /* Typo réduite — plus moderne, moins écrasante */
+    --sizeH1: 4.8rem;
+    --sizeH2: 3.6rem;
+    --sizeH3: 2.6rem;
+    --sizeH4: 2rem;
+    --sizeP: 1.6rem;
+    --sizeP2: 1.4rem;
+
+    --marginSection: 4rem;
+    --marginElement: 2rem;
+
+    font-family: var(--fontFamily);
+    --fontFamily: FS-sienna, Highfield, Futura, HearthStone, Cookie;
+    --box-shadow: 0 2px 8px rgba(39, 7, 34, 0.08);
+    --box-shadow-focus: 0 0 0 0, 0 0 0 0, 0px 0px 4px rgba(109, 0, 129, 0.3),
+        0px 0px 4px rgba(109, 0, 129, 0.4), 0px 0px 25px rgba(109, 0, 129, 0.4);
+    --text-shadow-glow: 0px 0px 4px rgba(255, 252, 246, 0.35),
+        0px 0px 4px rgba(255, 252, 246, 0.45),
+        0px 0px 25px rgba(255, 252, 246, 0.45);
+    --border-radius: 16px;
+    --animation-duration: 0.2s;
+
+    --input-height: 42px;
+    --header-height: 64px;
+    --carrousel-arrow-size: 8%;
+}
+
+::selection {
+    color: var(--fifthColor);
+    background-color: var(--selectionColor);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+@media (max-width: 800px) {
+    :root {
+        --sizeH1: 3.4rem;
+        --sizeH2: 2.6rem;
+        --sizeH3: 2rem;
+        --sizeH4: 1.8rem;
+        --sizeP: 1.5rem;
+        --sizeP2: 1.3rem;
+        --marginSection: 2.8rem;
+        --marginElement: 1.4rem;
+    }
+}
+
+@font-face {
+    font-family: FS-sienna;
+    src: url(../../fonts/FS-Siena-Regular.ttf);
+}
+@font-face {
+    font-family: Highfield;
+    src: url(../../fonts/HighfieldThin.otf);
+}
+@font-face {
+    font-family: Futura;
+    src: url(../../fonts/FUTURTHI.TTF);
+}
+@font-face {
+    font-family: HearthStone;
+    src: url(../../fonts/Hearth-Stone.ttf);
+}

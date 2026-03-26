@@ -1,0 +1,207 @@
+/* ===== LAYOUT ===== */
+.contactWrapper {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - var(--header-height));
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== IMAGE SIDE ===== */
+.imgWrapper {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.imgContainer {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../images/photoCafe11.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primaryColor);
+  opacity: 0.5;
+}
+
+.imgText {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: var(--sizeH2);
+  color: var(--fifthColor);
+  font-family: Highfield;
+  font-weight: 100;
+  line-height: 1.2;
+  padding: 0 2rem;
+}
+
+/* ===== FORM SIDE ===== */
+.formWrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgba(198, 158, 137, 0.10);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.formOverlay {
+  display: none;
+}
+
+.formContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 50rem;
+  padding: 3.6rem 0;
+}
+
+.textContact {
+  font-family: Highfield;
+  font-weight: 100;
+  font-size: var(--sizeH3);
+  color: var(--primaryColor);
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+/* ===== INPUTS ===== */
+input.contactInput,
+textarea.contactInput {
+  font-family: FS-sienna;
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.8rem;
+  width: 100%;
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba(39, 7, 34, 0.15);
+  background: var(--fifthColor);
+  color: var(--primaryColor);
+  box-shadow: var(--box-shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input.contactInput:focus,
+textarea.contactInput:focus {
+  border-color: var(--thirdColor);
+  box-shadow: var(--box-shadow), 0 0 0 3px rgba(136, 102, 93, 0.15);
+}
+
+.contactInput::placeholder {
+  color: var(--thirdColor);
+  opacity: 0.75;
+}
+
+/* ===== FIELD GROUPS ===== */
+.nameGroupeWrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.4rem;
+}
+
+#firstName,
+#lastName {
+  width: 47%;
+}
+
+#email,
+#callNumber {
+  margin-bottom: 1rem;
+}
+
+#message {
+  min-height: 12rem;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+/* ===== CHECKBOX ===== */
+.policyContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.textPolicy {
+  font-size: 1.4rem;
+  color: var(--primaryColor);
+}
+
+input[type='checkbox'].contactCheckBox {
+  width: 1.8rem;
+  height: 1.8rem;
+  accent-color: var(--secondaryColor);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ===== SUBMIT ===== */
+.submitButtonContainer {
+  width: 100%;
+}
+
+/* ===== ERRORS ===== */
+.errorTag {
+  color: #c0392b;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0.3rem 0 0.6rem 0.4rem;
+}
+
+.nameGroupeWrapper > .errorTag {
+  position: absolute;
+  bottom: -1.8rem;
+  left: 0;
+  margin: 0;
+}
+
+#lastName + .errorTag {
+  left: auto;
+  right: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .contactWrapper {
+    flex-direction: column;
+  }
+  .imgWrapper {
+    flex: 0 0 22vh;
+  }
+  .imgText {
+    font-size: var(--sizeH4);
+    bottom: 1.5rem;
+  }
+  .formWrapper {
+    flex: 1;
+  }
+  .formContainer {
+    width: 90%;
+    max-width: none;
+  }
+  .nameGroupeWrapper {
+    flex-direction: column;
+  }
+  #firstName,
+  #lastName {
+    width: 100%;
+  }
+}

@@ -1,0 +1,152 @@
+.header {
+    height: var(--header-height);
+    background-color: var(--primaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255, 252, 246, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.navLink {
+    position: relative;
+
+    color: white;
+    text-shadow: none;
+    text-decoration: none;
+
+    transition: 0.3s;
+    outline: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 1.4rem 0 1.4rem 0;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    gap: 1.5em;
+    padding: 0 2em;
+}
+
+.menuText {
+    line-height: 24px;
+    margin: 0;
+
+    text-shadow: none;
+    transition: 0.2s
+}
+.menuText::after{
+    content: '';
+    position: absolute;
+    top: 115%;
+    height: 2px;
+    left: 0;
+    width: 0;
+
+    background-color: white;
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+.menuText:active {
+    text-shadow: var(--text-shadow-glow);
+}
+a:hover .menuText::after, a:focus .menuText::after {
+    width: 100%;
+}
+
+.icone {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 30%;
+    margin-right: 4rem;
+}
+.icone .navLink {
+    margin-left: 3.5rem;
+}
+
+.headerImg {
+    height: 45px;
+}
+
+#logo {
+    margin-left: 5rem;
+    width: 20%;
+}
+
+.btnHamburger {
+    display: none;
+}
+
+@media (max-width: 1250px) {
+    .header {
+        flex-direction: column;
+        height: var(--header-height);
+        padding: 1em 2em;
+    }
+    .header.open {
+        height: 308px;
+    }
+
+    .header nav {
+        flex-direction: column;
+        gap: 2em;
+        margin: 0;
+        margin-top: 2em;
+    }
+    nav div {
+        flex-direction: column;
+    }
+
+    #menu {
+        width: auto;
+        padding: 0;
+    }
+
+    .icone {
+        flex-direction: row;
+        width: auto;
+    }
+
+    #logo {
+        margin: 0;
+        width: auto;
+        align-self: flex-start;
+    }
+
+    .btnHamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 13px;
+        right: 2em;
+        width: 50px;
+        height: 50px;
+        
+        background-color: transparent;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btnHamburger:hover {
+        background-color: var(--fifthColor);
+    }
+    .btnHamburger svg {
+        fill: var(--fifthColor);
+    }
+    .btnHamburger:hover svg {
+        fill: var(--primaryColor);
+    }
+}

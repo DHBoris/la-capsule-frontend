@@ -1,0 +1,35 @@
+
+
+h1 {
+    font-size: var(--sizeH1);
+    font-family: Highfield;
+    font-weight: normal;
+
+}
+
+h2{
+    font-size: var(--sizeH2);
+    font-family: Highfield;
+    font-weight: normal;
+    line-height: 1.2em;
+}
+
+h3{
+    font-size: var(--sizeH3);
+    font-family: Highfield;
+    font-weight: normal;
+    line-height: 1.2em;
+}
+
+h4{
+    font-size: var(--sizeH4);
+    font-family: Highfield;
+    font-weight: normal;
+}
+
+p{
+    font-size: var(--sizeP);
+    font-family: FS-sienna;
+    line-height: 1.8em;
+    font-weight: 400;
+}

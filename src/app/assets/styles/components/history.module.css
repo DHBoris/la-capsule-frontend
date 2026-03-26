@@ -1,0 +1,158 @@
+.cartTopWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 85vh;
+    margin: 1.3% 6.75% 11.5% 4.15%;
+    justify-content: center;
+}
+
+.cartImgWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 59%;
+    flex-wrap: wrap;
+}
+
+#cartTextWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 30.38%;
+    align-items: center;
+    justify-content: center;
+}
+
+#cartTitle {
+    text-align: center;
+    margin-bottom: 5%;
+    color: var(--primaryColor);
+}
+
+#cartImg1 {
+    width: 39.52%;
+    height: 52.8%;
+}
+
+#cartImg2 {
+    width: 29%;
+    height: 32.97%;
+    margin: 0 2.83% 3.41% 2.97%;
+}
+
+#cartImg3 {
+    width: 24.15%;
+    height: 32.97%;
+}
+
+#cartImg4 {
+    width: 49.13%;
+    height: 43.76%;
+    margin: 3.86% 1.89% 0 0;
+}
+
+#cartImg5 {
+    position: relative;
+    width: 47.92%;
+    height: 63.99%;
+    bottom: 15.1%;
+}
+
+#decoImg {
+    position: relative;
+    left: 39%;
+    top: -49%;
+}
+
+.productList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+.productImg {
+    width: 15%
+}
+
+.unit {
+    font-size: 2rem;
+}
+
+.quantityNumber {
+	width: 90px;
+	height: var(--input-height);
+	line-height: var(--input-height);
+	margin: 0;
+	color: var(--primaryColor);
+	text-align: center;
+	font-family: var(--fontFamily);
+	font-size: 18px;
+	border-radius: 33px;
+	border: none;
+	box-shadow: var(--box-shadow);
+	background: var(--fifthColor);
+	transition: 0.1s;
+
+	position: relative;
+}
+
+#emptyText {
+    width: 100%;
+    text-align: center;
+}
+
+.recommandeButton {
+    position: relative;
+    text-align: end;
+}
+
+/* wide */
+@media screen and (min-width: 1675px) {
+    #decoImg {
+        position: relative;
+        width: 20%;
+        bottom: 50.5%;
+        left: 39%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) and (max-width: 1674px) {
+    #cartImg5 {
+        bottom: 17.3%;
+    }
+    #decoImg {
+        position: relative;
+        width: 25%;
+        left: 36%;
+    }
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #cartImg5 {
+        bottom: 17.7%;
+    }
+    #decoImg {
+        position: relative;
+        width: 30%;
+        bottom: 41.5%;
+        left: 34%;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 767px) {
+    #cartImg5 {
+        bottom: 19.3%;
+    }
+    #decoImg {
+        position: relative;
+        width: 30%;
+        bottom: 33.5%;
+        left: 34%;
+    }
+}

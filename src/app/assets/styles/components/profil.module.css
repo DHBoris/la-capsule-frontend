@@ -1,0 +1,72 @@
+/* ===== PAGE ===== */
+.profilWrapper {
+  min-height: calc(100vh - var(--header-height));
+  background: linear-gradient(150deg, var(--fifthColor) 55%, rgba(136, 102, 93, 0.08) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem 6rem;
+  gap: 2.4rem;
+}
+
+/* ===== BUTTONS ROW ===== */
+.buttonContainer {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== INFO CARD ===== */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 55rem;
+  gap: 1rem;
+  background: white;
+  border-radius: 2rem;
+  padding: 3.2rem;
+  box-shadow: 0 4px 24px rgba(39, 7, 34, 0.08);
+}
+
+/* View mode labels */
+.label {
+  font-size: 1.6rem;
+  font-family: FS-sienna;
+  color: var(--primaryColor);
+  background: var(--fifthColor);
+  padding: 1.3rem 1.6rem;
+  border-radius: 1rem;
+  border: 1.5px solid rgba(39, 7, 34, 0.08);
+  width: 100%;
+  display: block;
+}
+
+/* Edit mode inputs */
+.profilInput {
+  font-family: FS-sienna;
+  font-size: 1.6rem;
+  padding: 1.3rem 1.6rem;
+  border-radius: 1rem;
+  border: 1.5px solid rgba(136, 102, 93, 0.35);
+  width: 100%;
+  color: var(--primaryColor);
+  background: var(--fifthColor);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.profilInput:focus {
+  border-color: var(--thirdColor);
+  box-shadow: 0 0 0 3px rgba(136, 102, 93, 0.15);
+}
+
+@media (max-width: 600px) {
+  .profilWrapper {
+    padding: 3rem 1.5rem 4rem;
+  }
+  .formContainer {
+    padding: 2rem;
+  }
+}

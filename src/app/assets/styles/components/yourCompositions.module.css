@@ -1,0 +1,93 @@
+/* RESET CSS */
+input[type="checkbox"] {
+	width: auto;
+	margin: 0;
+}
+
+:root {
+	--compositions-width: 1000px;
+}
+
+.yourCompositions {
+	flex-direction: column;
+	gap: 5px;
+	width: 1000px;
+	max-width: 90%;
+	margin: var(--marginSection) auto;
+	margin-bottom: 0;
+	display: flex;
+}
+
+.compositionH2 {
+	text-align: center;
+}
+
+.magnify {
+	width: 40px;
+	height: 30px;
+	background: center no-repeat;
+	background-size: contain;
+	display: flex;
+	flex-direction: column;
+	gap: 90px;
+}
+
+.filters {
+	display: flex;
+	align-self: flex-start;
+	margin: 6px 0;
+}
+
+.filter {
+	width: 51px;
+	height: 50px;
+	margin-right: 1em;
+
+	background: center no-repeat url('../../images/filter.svg');
+}
+
+.labels {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.table {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 38px;
+	width: var(--compositions-width);
+	margin-bottom: 2em;
+}
+
+.tableItem {
+	display: flex;
+	flex-wrap: wrap;
+	width: 306px;
+	height: 458px;
+	position: relative;
+
+	background-size: cover;
+}
+
+.arrowDown {
+	display: block;
+	width: 135px;
+	height: 135px;
+	margin: auto;
+
+	background: center no-repeat url("../../images/anchor.svg");
+	background-size: contain;
+}
+
+.heart {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	bottom: 2px;
+	right: 16px;
+
+	background: center no-repeat url('../../images/likes.svg');
+	background-size: contain;
+}
