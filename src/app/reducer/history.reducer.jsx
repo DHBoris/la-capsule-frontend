@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
     historyListData: []
@@ -11,7 +11,7 @@ const historySlice = createSlice({
         addHistory: (state, action) => {
             const findDuplicate = state.historyListData.find((e) => e.id === action.payload.id);
             if (findDuplicate === undefined) {
-                state.coffeeListData.push(action.payload);
+                state.historyListData.push(action.payload);
             }
             console.log(current(state));
         }

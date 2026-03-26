@@ -7,7 +7,7 @@ const config = {
 const stripeApi = {
   createCheckoutSession: async (items) => {
     try {
-      const rawResponse = await axios.post('http://localhost:5500/stripe/create-checkout-session', { items }, config);
+      const rawResponse = await axios.post('http://localhost:5500/create-checkout-session', { items }, config);
       let response;
 
       if (rawResponse.status === 200) {

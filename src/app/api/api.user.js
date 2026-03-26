@@ -88,7 +88,7 @@ const SignOutUser = async () => {
 //Load Profil
 const LoadUserProfil = async (accessToken) => {
     try {
-        const rawResponse = await axios.post('http://localhost:5500/users/loadProfil', accessToken, {
+        const rawResponse = await axios.post('http://localhost:5500/users/loadProfil', {}, {
             withCredentials: true,
             headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -153,7 +153,7 @@ const UpdateUserProfile = async (userData, accessToken) => {
             lastName: userData.lastName,
             phoneNumber: userData.phoneNumber,
             email: userData.email,
-            address: userData.adress,
+            address: userData.address,
         };
 
         const rawResponse = await axios.put('http://localhost:5500/users/updateProfile', updatedUser, {
