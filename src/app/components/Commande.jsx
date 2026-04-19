@@ -7,9 +7,7 @@ import { deleteCoffee, updateCoffeeQuantity } from '../reducer/coffee.reducer';
 import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import styles from '../assets/styles/components/commande.module.css';
 import Button from '../components/Button';
-import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import CheckoutForm from './CheckoutForm'; 
 import { LoadUserProfil } from '../api/api.user';
 
 const stripePromise = loadStripe('pk_test_51OAXbxJ2Rv7IDdW6IYpYMHvSzMDpB8lCiTULdAQoI70GVvWfdQ2Oc4iXrmq04KpyTvP4FLQs6cM1CfBS2g1LZzRa00lEpYhV4H');
@@ -101,7 +99,7 @@ const Commande = () => {
     useEffect(() => {
         const handleLoadUserProfile = async () => {
             try {
-                const rawResponse = await LoadUserProfil(accessToken);
+                const rawResponse = await LoadUserProfil(accessToken.userToken);
                 const response = rawResponse.data;
                 const userData = response.user;
 
@@ -119,13 +117,36 @@ const Commande = () => {
     }, [accessToken]);
 
 
-    const handleValide = () => {
-        if (accessToken.isLoggedIn === false) {
-            notify('failed');
+    const handleValide = async () => {
+        if (!accessToken.isLoggedIn) {
             navigate('/signIn');
-        } else {
-            notify('success');
-            dispatch(addHistory(response.userToken));
+            return;
+        }
+
+        try {
+            const res = await fetch('http://localhost:5500/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    items: coffeeListData.map((item) => ({
+                        name: item.name,
+                        price: item.price,
+                        quantity: item.quantity,
+                    })),
+                    currency: 'eur',
+                }),
+            });
+
+            const { sessionId } = await res.json();
+            const stripe = await stripePromise;
+            const result = await stripe.redirectToCheckout({ sessionId });
+
+            if (result.error) {
+                toast.error(result.error.message);
+            }
+        } catch (error) {
+            console.error('Erreur paiement :', error);
+            toast.error('Une erreur est survenue lors du paiement.');
         }
     };
 
@@ -202,7 +223,6 @@ const Commande = () => {
                                     >
                                         Supprimer
                                     </Button>
-                                    {console.log(item)}
                                 </div>
                             ))
                         ) : (
@@ -211,9 +231,6 @@ const Commande = () => {
                     </div>
 
                     <div className={styles.paymentButtonWrapper}>
-                    <Elements stripe={stripePromise}>
-                    <CheckoutForm items={coffeeListData} />
-                    </Elements>
                         <div className={styles.paymentDetail}>
                             <p className={styles.totalPrice}>Montant total :{sumPrice} € </p>
                             <div>

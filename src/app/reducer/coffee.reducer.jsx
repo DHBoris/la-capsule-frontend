@@ -4,18 +4,20 @@ const initialState = {
     coffeeListData: []
 };
 
+const isValidItem = (item) => item && typeof item === 'object' && !Array.isArray(item) && item.id && item.price;
+
 // console.log(initialState);
 const coffeeListSlice = createSlice({
     name: 'coffeeList',
     initialState,
     reducers: {
         addCoffee: (state, action) => {
-            console.log(action.payload)
+            state.coffeeListData = state.coffeeListData.filter(isValidItem);
+            if (!isValidItem(action.payload)) return;
             const findDuplicate = state.coffeeListData.find((e) => e.id === action.payload.id);
             if (findDuplicate === undefined) {
                 state.coffeeListData.push(action.payload);
             }
-            console.log(current(state));
         },
         deleteCoffee: (state, action) => {
             // console.log(current(state));

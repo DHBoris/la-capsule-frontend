@@ -46,8 +46,8 @@ const Cart = () => {
             if (accessToken.isLoggedIn === true) {
                 const rawResponse = await CartLoad(accessToken.userToken);
                 console.log(rawResponse);
-                if (rawResponse.data.cartList && rawResponse.data.cartList > 0) {
-                dispatch(addCoffee(rawResponse.data.cartList));
+                if (rawResponse.data.cartList && rawResponse.data.cartList.length > 0) {
+                    rawResponse.data.cartList.forEach((item) => dispatch(addCoffee(item)));
                 }
             }
         };
@@ -98,6 +98,7 @@ const Cart = () => {
         let totalPrice = 0;
         if (coffeeListData && coffeeListData.length > 0) {
             coffeeListData.forEach((item) => {
+                if (!item || !item.id || !item.price) return;
                 const coffeeNumber = coffeeNumbers[item.id] || 1;
                 totalPrice += (item.price || 0) * coffeeNumber;
             });
