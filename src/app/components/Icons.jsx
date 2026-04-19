@@ -149,6 +149,41 @@ export const User = ({
 	);
 };
 
+export const OrderHistory = ({
+	className,
+	width = "51",
+	height = "50",
+	outlineColor = defaultColor,
+	fillColor = defaultColor,
+}) => {
+	const outlineStyle = { fill: outlineColor };
+	const shapeStyle = { fill: fillColor };
+
+	return (
+		<svg
+			width={width}
+			height={height}
+			viewBox="0 0 50 50"
+			className={className}
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			style={svgStyle}
+		>
+			<title>Historique des commandes</title>
+			<circle className={styles.shape} style={shapeStyle} cx="25" cy="25" r="22" />
+			<path
+				style={outlineStyle}
+				d="M25,0C11.19,0 0,11.19 0,25C0,38.81 11.19,50 25,50C38.81,50 50,38.81 50,25C50,11.19 38.81,0 25,0ZM25,47C12.85,47 3,37.15 3,25C3,12.85 12.85,3 25,3C37.15,3 47,12.85 47,25C47,37.15 37.15,47 25,47Z"
+			/>
+			<path
+				className={styles.details}
+				style={outlineStyle}
+				d="M26.5,12L23.5,12L23.5,26.5L36,26.5L36,23.5L26.5,23.5Z"
+			/>
+		</svg>
+	);
+};
+
 export const Hamburger = ({
 	className,
 	width = "24",

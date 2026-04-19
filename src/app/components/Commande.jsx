@@ -126,7 +126,10 @@ const Commande = () => {
         try {
             const res = await fetch('http://localhost:5500/create-checkout-session', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken.userToken}`,
+                },
                 body: JSON.stringify({
                     items: coffeeListData.map((item) => ({
                         name: item.name,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "../assets/images/logo.svg";
-import { Message, Likes, Panier, User, Hamburger } from "./Icons";
+import { Message, OrderHistory, Panier, User, Hamburger } from "./Icons";
 import { connect } from "react-redux";
 import styles from "../assets/styles/components/header.module.css";
 
@@ -43,7 +43,7 @@ function Header({ isLoggedIn }) {
 						<Message className={styles.headerImg} />
 					</NavLink>
 					<NavLink className={styles.navLink} to="/history">
-						<Likes className={styles.headerImg} />
+						<OrderHistory className={styles.headerImg} />
 					</NavLink>
 					<NavLink className={styles.navLink} to="/cart">
 						<Panier className={styles.headerImg} />

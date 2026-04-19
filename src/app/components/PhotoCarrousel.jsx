@@ -22,7 +22,6 @@ const PhotoCarousel = () => {
         };
         photoloader();
     }, []);
-    console.log(photoList);
     return (
         <div className={styles.carrouselContainer}>
             <Carousel>
@@ -39,8 +38,8 @@ const PhotoCarousel = () => {
                     ))
                 ) : (
                     <div>
-                        <img src={noImg} alt="notFound" />
-                        <p className="legend">notFound</p>
+                        <img src={noImg} alt="Aucune photo" />
+                        <p className="legend">Aucune photo disponible</p>
                     </div>
                 )}
             </Carousel>

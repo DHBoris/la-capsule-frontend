@@ -136,6 +136,45 @@ const CartDelete = async (accessToken, coffeeItem) => {
     }
 };
 
+const SaveOrder = async (accessToken, { items, total, stripeRef }) => {
+    try {
+        const rawResponse = await axios.post(
+            'http://localhost:5500/orders/save',
+            { items, total, stripeRef },
+            { withCredentials: true, headers: { Authorization: `Bearer ${accessToken}` } }
+        );
+        return rawResponse;
+    } catch (error) {
+        console.error('Erreur sauvegarde commande:', error);
+    }
+};
+
+const GetOrders = async (accessToken) => {
+    try {
+        const rawResponse = await axios.get(
+            'http://localhost:5500/orders',
+            { withCredentials: true, headers: { Authorization: `Bearer ${accessToken}` } }
+        );
+        return rawResponse;
+    } catch (error) {
+        console.error('Erreur récupération commandes:', error);
+    }
+};
+
+const CartClear = async (accessToken) => {
+    try {
+        const rawResponse = await axios.post(
+            'http://localhost:5500/cartClear', {}, {
+                withCredentials: true,
+                headers: { Authorization: `Bearer ${accessToken}` }
+            }
+        );
+        return rawResponse;
+    } catch (error) {
+        console.error('Erreur vidage panier:', error);
+    }
+};
+
 const OrderConfirmation = async ({ email, firstName, items, total, orderId }) => {
     try {
         const response = await axios.post('http://localhost:5500/order-confirmation', {
@@ -147,4 +186,4 @@ const OrderConfirmation = async ({ email, firstName, items, total, orderId }) =>
     }
 };
 
-export { MessageUser, uploadPhoto, CartAdd, CartLoad, CartDelete, loadPhoto, OrderConfirmation };
+export { MessageUser, uploadPhoto, CartAdd, CartLoad, CartDelete, CartClear, SaveOrder, GetOrders, loadPhoto, OrderConfirmation };

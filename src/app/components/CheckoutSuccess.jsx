@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { clearCart } from '../reducer/coffee.reducer';
-import { OrderConfirmation } from '../api/api.index';
+import { OrderConfirmation, CartClear, SaveOrder } from '../api/api.index';
 import Button from './Button';
 import styles from '../assets/styles/components/checkoutSuccess.module.css';
 import jwtDecode from 'jwt-decode';
@@ -35,15 +35,10 @@ const CheckoutSuccess = () => {
             firstName = decoded.firstName || '';
         } catch (e) {}
 
-        OrderConfirmation({
-            email,
-            firstName,
-            items: coffeeListData,
-            total,
-            orderId: sessionId
-        });
-
-        setTimeout(() => dispatch(clearCart()), 0);
+        OrderConfirmation({ email, firstName, items: coffeeListData, total, orderId: sessionId });
+        SaveOrder(userToken, { items: coffeeListData, total: parseFloat(total), stripeRef: sessionId });
+        CartClear(userToken);
+        dispatch(clearCart());
     }, []);
 
     return (
